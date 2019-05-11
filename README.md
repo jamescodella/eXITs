@@ -12,7 +12,7 @@ Please follow the steps listed below to process the ICHI DACMI data, train and e
 
 ## Automated training and prediction generation
 This will process the data files for training the base models, ensemble model, and predictions.
-Run `python run.py -i <input_path> -o <output_path>
+Run `python run.py -i <input_path> -o <output_path>`
 ```
 - input_path: "path must contain "train_with_missing", "train_groundtruth", and "test_missing" folders each containing the corresponding data CSVs.
 - output_path " user specified location that will contain the processed data files, and a folder with predictions named "output_results/"
