@@ -1,0 +1,15 @@
+numpy==1.16.3
+scipy==1.2.1
+pandas==0.24.2
+scikit-learn>=0.20
+matplotlib
+torch==1.0.1.post2
+torchvision
+tensorboardX
+tensorflow==1.13.1
+Keras==2.2.4
+xgboost==0.82
+fancyimpute==0.4.3
+h5py
+tables
+

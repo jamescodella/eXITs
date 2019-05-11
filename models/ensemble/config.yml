@@ -1,0 +1,52 @@
+ensemble_models:
+  standard_ensembles:
+    - Bagging-Pasting
+    - Bagging-Replacement
+    - Bagging-RS
+    - Bagging-RP
+    - XGB
+    - RF
+    - BMA
+    - Gate
+    - FFN
+  gate_ensemble:
+    structure:
+      - act:         nn.ReLU()
+        input_size:  13 # input size
+        output_size: 10
+      - act:         nn.ReLU()
+        input_size: 10
+        output_size: 10
+      - act:         nn.Softmax(dim=1)
+        input_size:  10
+        output_size: 6 # how many base models
+    batch_size: 25
+    num_epochs: 10
+    optimizer_params:
+      lr:             .001
+      #amsgrad:        True
+    cuda: False
+  feedforward_ensemble:
+    structure:
+      - act:         nn.ReLU()
+        input_size:  13
+        output_size: 10
+      - act:         nn.ReLU()
+        input_size:  10
+        output_size: 8
+      - act:         nn.Hardshrink(lambd=0)
+        input_size:  8
+        output_size: 1
+    batch_size: 25
+    num_epochs: 50
+    optimizer_params:
+      lr:             .001
+      # amsgrad:        True
+    cuda: False
+base_models: # list of base models to be used by the ensemble
+  - BiGRU
+  - BiLSTM
+  - HorizontalFcn
+  - HorizontalKnn
+  - HorizontalRandomForest
+  - InterpolateLinear

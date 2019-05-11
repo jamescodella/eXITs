@@ -1,0 +1,246 @@
+Line counts from code and config files
+
+--SUMMARY OF ALL FILES--
+
+bash$ cloc ensemble/bma.py  ensemble/config.yml  ensemble/dataloader.py  ensemble/gate_ensemble.py  ensemble/config.yml  ensemble/ensemble_model.py  ensemble/util.py   BiGRU.py  HorizontalKnn.py  process_data.py  BiLSTM.py  HorizontalRandomForest.py  ensemble_main.py  HorizontalBase.py  InterpolateLinear.py  estimator_pipeline.py  HorizontalFcn.py  data_utils.py  eval.py
+      18 text files.
+      18 unique files.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.04 s (473.2 files/s, 44844.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          17            202             59           1674
+YAML                             1              0              2             50
+Markdown                         3              0              0              3
+-------------------------------------------------------------------------------
+SUM:                            21            202             61           1727
+-------------------------------------------------------------------------------
+
+TOTAL LINES = 1727 + 61 + 202 = 1990
+
+
+--INDIVIDUAL FILES--
+
+github.com/AlDanial/cloc v 1.82  T=0.04 s (473.2 files/s, 44844.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          17            202             59           1674
+YAML                             1              0              2             50
+Markdown                         3              0              0              3
+-------------------------------------------------------------------------------
+SUM:                            21            202             61           1727
+-------------------------------------------------------------------------------
+bash$cloc ensemble/bma.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (104.0 files/s, 1975.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              3              2             14
+-------------------------------------------------------------------------------
+bash$cloc ensemble/config.yml
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (94.1 files/s, 4892.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+YAML                             1              0              2             50
+-------------------------------------------------------------------------------
+bash$cloc ensemble/dataloader.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.02 s (53.4 files/s, 7050.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             18             11            103
+-------------------------------------------------------------------------------
+bash$cloc ensemble/gate_ensemble.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (82.6 files/s, 10237.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             18             11             95
+-------------------------------------------------------------------------------
+bash$cloc ensemble/config.yml
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (114.3 files/s, 5945.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+YAML                             1              0              2             50
+-------------------------------------------------------------------------------
+bash$cloc ensemble/ensemble_model.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (80.5 files/s, 14885.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             15              2            168
+-------------------------------------------------------------------------------
+bash$cloc ensemble/util.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (94.2 files/s, 11207.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             24              7             88
+-------------------------------------------------------------------------------
+(base) Jamess-MacBook-Pro-2:models jvcodella$
+bash$cloc BiGRU.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (81.2 files/s, 7714.1 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             10              1             84
+-------------------------------------------------------------------------------
+bash$cloc HorizontalKnn.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (95.8 files/s, 8529.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              7              1             81
+-------------------------------------------------------------------------------
+bash$cloc process_data.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (79.9 files/s, 13824.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             12              1            160
+-------------------------------------------------------------------------------
+bash$cloc BiLSTM.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (77.0 files/s, 7316.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              9              2             84
+-------------------------------------------------------------------------------
+bash$cloc HorizontalRandomForest.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (83.4 files/s, 7840.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              9              1             84
+-------------------------------------------------------------------------------
+bash$cloc ensemble_main.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (104.1 files/s, 7284.8 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              5              1             64
+-------------------------------------------------------------------------------
+bash$cloc HorizontalBase.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (96.0 files/s, 5282.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              6              0             49
+-------------------------------------------------------------------------------
+bash$cloc InterpolateLinear.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (106.4 files/s, 9682.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              9              1             81
+-------------------------------------------------------------------------------
+bash$cloc estimator_pipeline.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.02 s (51.7 files/s, 14161.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1             37              9            228
+-------------------------------------------------------------------------------
+bash$cloc HorizontalFcn.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (77.7 files/s, 8856.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              9              2            103
+-------------------------------------------------------------------------------
+bash$cloc data_utils.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (89.3 files/s, 16075.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              8              7            165
+-------------------------------------------------------------------------------
+bash$cloc eval.py
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.01 s (114.8 files/s, 2985.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           1              3              0             23
+-------------------------------------------------------------------------------
+(base) Jamess-MacBook-Pro-2:models jvcodella$
