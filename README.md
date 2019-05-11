@@ -12,15 +12,14 @@ Please follow the steps listed below to process the ICHI DACMI data, train and e
 
 ## Automated training and prediction generation
 
-The `run.py` script will process the data files for training the base models, ensemble model, and predictions. Processed data is saved to `bam/data`, models is saved to `bam/models/`
+The `run.py` script will process the data files, train the base models and eXITs, and generate predictions. Processed data is saved to `bam/data`, models are saved to `bam/models/`.  Imputations will be stored in `bam/data/output_results/`
 Run `python run.py -i <input_path> ` where
 ```
 - input_path: path must contain "train_with_missing", "train_groundtruth", and "test_missing" folders each containing the corresponding data CSVs.
 ```
 E.g. `python run.py -i bam/challenge/`
-The proccessed data will be stored in `bam/data/`. Imputations will be stored in `bam/data/output_results/`
 
-## Manual Training, Evaluation
+## Manual/Custom Training, Evaluation
 
 **Please note:**
 1. Before running any models, you need to process the dataset and specify the dataset location
