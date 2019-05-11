@@ -34,26 +34,24 @@ class DataLoader():
     def get_training(self):
         return self.X_train, self.y_train
 
-    def get_ntraining(self):
-        # return number of data points in the training set
+    def get_ntraining(self): # return number of data points in the training set
+
         return self.X_train.shape[0]
 
     def get_test(self):
         return self.X_test, self.y_test
 
-    def get_ntest(self):
-        # return number of data points in the test set
+    def get_ntest(self): # return number of data points in the test set
         return self.X_test.shape[0]
 
     def get_val(self):
         return self.X_val, self.y_val
 
-    def get_nval(self):
-        # return number of data points in the validation set  
+    def get_nval(self):         # return number of data points in the validation set  
         return self.X_val.shape[0]
 
-    def get_pred_training(self):
-        # return the prediction from the 3 base models in the training set  
+    def get_pred_training(self): # return the prediction from the 3 base models in the training set  
+
         base_pred = np.reshape(np.concatenate((self.y_pred1_train, self.y_pred2_train, self.y_pred3_train)), (-1,3), order='F') # order='F' to go through rows first and then columns
         return base_pred
 
@@ -96,7 +94,6 @@ class StaticDataLoader(): #Loads and iterates over the non-temporal data
                 batch_size = sz - batch_size * (sz // batch_size)
             else :
                 batch_block = order[i*batch_size : (i+1)*batch_size]
-
             x_batch = np.zeros(shape=(batch_size, self.x_data.shape[1]))
             base_batch = np.zeros(shape=(batch_size, self.base_pred.shape[1]))
             y_batch = np.zeros(shape=(batch_size, ))  # self.y_data.shape[1]

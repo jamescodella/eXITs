@@ -15,8 +15,7 @@ class CommonLayer(nn.Module, ABC):
         self.act = act
         self.model = None # this will be defined later in the init_layer function
 
-    def init_layer(self, **kwargs):
-        # Initializes the model by setting the input and output sizes and setup the layer that transforms the input to the output
+    def init_layer(self, **kwargs):         #  the model by setting the input and output sizes and setup the layer that transforms the input to the output
         if self._ip_size < 0:
             self._ip_size = kwargs['ip_size']
         if self._op_size < 0:
@@ -60,15 +59,13 @@ class BaseNNModule(nn.Module):
         # Initialize the weights of the model
         for lyr in self.layrs:
             lyr.weights_init()
-            # nn.init.xavier_uniform_(mdl.weight)
 
     def fit(self, data_iterator, optimizer, criterion): # Optimizes the model using the input data. It passes over the data only once
         # Parameters: data_iterator: iterator that returns batches of x and y;  optimizer: pytorch optimizer to be used to optimize the network criterion: loss function
 
         self.train() # set model to training mode
-        # compute sum of losses over all batches
         running_loss = 0
-        while True:
+        while True: # compute sum of losses over all batches
             try:
                 x_batch, y_batch, base_batch = next(data_iterator)
                 # compute ypred (forward pass)

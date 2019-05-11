@@ -106,11 +106,11 @@ def main():
     train = arg.train
     input_path = arg.inp
     output_path = arg.out
-    if input_path == '':
-        if train:
-            input_path = '/Users/jvcodella/Box Sync/AI735/ichi2019/challenge/data/'
+    if input_path == '': # specify default user paths here
+        if train: 
+            input_path = 'bam/challenge/data/'
         else:
-            input_path = '/Users/jvcodella/Box Sync/AI735/ichi2019/challenge/'   
+            input_path = 'bam/challenge/'   
     if train:
         d_types = ['train_with_missing', 'train_groundtruth']
         dict_name = 'train_with_missing'

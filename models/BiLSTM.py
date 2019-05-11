@@ -87,7 +87,6 @@ def main_load_models(arg):    # load model
     mt.predict()
 
 if __name__ == "__main__":
-    # TODO: check the code
     arg = du.parse_args()
     if arg.final:
         main_load_models(arg)

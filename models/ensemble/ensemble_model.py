@@ -62,7 +62,6 @@ class StandardEnsembel():
         else :
             self.estimators[self.ensemble_name] = self.estimator
 
-
     def _define_param_space (self, mdl, estimator_name):
         if estimator_name == "Bagging-Pasting" : # subsets of samples
             param_space = {'n_estimators':[10,50,100], 'max_samples':[.6,.8, 1.0]}
@@ -84,13 +83,11 @@ class StandardEnsembel():
             reg_param_search = GridSearchCV(mdl, param_grid=param_space, cv=3)
         else:
             reg_param_search = mdl
-
         return reg_param_search
 
     def _train(self, train_data_loader, val_data_loader, mls, name, **kwargs): #Train the model on training data for multiple epochs and choosing the one that has the best metric on the validation data
         torch.manual_seed(10)
         self.estimators[name].weights_init()
-
         # Training the model
         best_score = np.inf # np.inf or 0 ... score on the validation set
         num_epochs = kwargs['num_epochs'] if 'num_epochs' in kwargs else 1000

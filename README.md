@@ -1,13 +1,25 @@
-
-# eXITs: An Ensemble Approach for Imputing Missing EHR Data
+# eXtreme Imputation: An ensemble approach for imputing missing data
 
 This repo contains the code for our IBM Research team's entry in the IEEE International Conference on Health Informatics Data Analytics Challenge on Missing data Imputation (DACMI). The code is copyright 2019 IBM, Corp and open sourced under the Apache License Version 2.0 (APLv2). [See license.txt]
 
 The authors of this code (in alphabetical order) are: Prithwish Chakraborty, James Codella, Mohamed Ghalwash, Hillol Sarker, Daby Sow, and Zijun Yao
 
+eXITs requires Python 3.6
 
-## Instructions
+# Instructions
+
 Please follow the steps listed below to process the ICHI DACMI data, train and evaluate models, and generate predictions.
+
+## Automated training and prediction generation
+This will process the data files for training the base models, ensemble model, and predictions.
+Run `python run.py -i <input_path> -o <output_path>
+```
+- input_path: "path must contain "train_with_missing", "train_groundtruth", and "test_missing" folders each containing the corresponding data CSVs.
+- output_path " user specified location that will contain the processed data files, and a folder with predictions named "output_results/"
+```
+E.g. `python run.py -i bam/challenge/ -o bam/data/`
+
+## Manual Training, Evaluation, and Predictions
 
 **Please note:**
 1. Before running any models, you need to process the dataset and specify the dataset location
@@ -16,8 +28,8 @@ Please follow the steps listed below to process the ICHI DACMI data, train and e
 
 
 ## 0. Process data
-Run `process_data.py -i </path_to_data/> -o </path_to_processed_data/>` and use the flag  `-t` to process the training set, or omit `-t` to process the test set.
-E.g. `process_data.py -i models/bam/data/ -o models/bam/data - t` processes the training data
+Run `python process_data.py -i </path_to_data/> -o </path_to_processed_data/>` and use the flag  `-t` to process the training set, or omit `-t` to process the test set.
+E.g. `python process_data.py -i models/bam/data/ -o models/bam/data - t` processes the training data
 
 ## 1. Base models
 You need to train the base models on each cross-validation fold. There are five folds in total (0-4). 

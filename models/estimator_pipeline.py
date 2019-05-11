@@ -7,7 +7,6 @@ from sklearn.model_selection import StratifiedKFold, train_test_split
 import data_utils as du
 import logging
 from six import iteritems
-
 bam_loc = 'bam/data/'
 output_models = 'bam/models/'
 DATA_file = 'ICHI_PADDED_training_data.p'
@@ -21,7 +20,6 @@ def load_ichi_data(data_file, is_padded = True):
     with open(os.path.join(bam_loc, data_file), 'rb') as fIn:
         # loading dictionary containing [X, X_mask, y, y_mask, X_filled, X_diff, X_time]
         data = pickle.load(fIn)
-
     X = data.pop('X')     # each element, is a list of N patients, each elements FxT np array
     X_mask = data.pop("X_mask")
     y = data.pop("y")
@@ -120,7 +118,6 @@ class ModelTrainer(object):
         y = self._list_slice(self.y, idx, True)
         X_mask = self._list_slice(self.X_mask, idx)
         y_mask = self._list_slice(self.y_mask, idx)
-
         array_data = dict()
         if bool(arrays):
             for key in arrays:
@@ -139,7 +136,6 @@ class ModelTrainer(object):
                 else:
                     _norm = False
                 othr_data[key] = self._list_slice(self.othr_data[key], idx, _norm)
-
         othr_data.update(array_data)
         return dict(idx=idx, X=X, y=y, X_mask=X_mask, y_mask=y_mask, othr_data=othr_data)
 
@@ -203,12 +199,10 @@ class ModelTrainer(object):
             fName = os.path.join(bam_loc, "{}_{}_{}".format(estimator_.__name__, nth_split, run_id))
         elif nth_split < 0 or nth_split == self.n_splits:
             fName = os.path.join(bam_loc, "{}_{}_{}".format(self.estimator_.__name__, self.n_splits, run_id))
-
         pred_y_test = estimator_.predict(X_test, X_mask_test, **othr_test)
         if self.normalizer is not None:
             pred_y_test = self.normalizer(pred_y_test, inverse=True)
             y_test = self.normalizer(y_test, inverse=True)
-
         with open(fName, 'wb') as fOut:
             data = dict(test_idx=test_idx, pred_y_test=pred_y_test, X_test=X_test, y_test=y_test, X_mask_test=X_mask_test, y_mask_test=y_mask_test, othr_test=othr_test, run_id=run_id)
             pickle.dump(data, fOut)
@@ -237,13 +231,12 @@ class StackedEnsemble(ModelTrainer):
         else:
             valid_data = None
         self.estimator_.fit(X_train, y_train, X_mask_train, y_mask_train, valid_data=valid_data, **othr_train)
-
         pred_y_test = None
         if nth_split < self.n_splits:
             fName = os.path.join(bam_loc, "{}_{}_{}".format(self.estimator_.__name__, nth_split, run_id))
         elif nth_split < 0 or nth_split == self.n_splits:
             fName = os.path.join(bam_loc, "{}_{}_{}".format(self.estimator_.__name__, self.n_splits, run_id))
-       
+    
         pred_y_test = self.estimator_.predict(X_test, X_mask_test, **othr_test)
         if self.normalizer is not None:
             pred_y_test = self.normalizer(pred_y_test, inverse=True)
