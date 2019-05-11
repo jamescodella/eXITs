@@ -3,7 +3,7 @@ import data_utils as du
 import pickle
 def main(arg):
     data_loc = arg.inp
-    processed_data_loc = arg.out
+    processed_data_loc = 'bam/data/'
     models = ['BiLSTM', 'BiGRU', 'HorizontalFcn', 'HorizontalKnn', 'HorizontalRandomForest', 'InterpolateLinear']
     folds = 5
     os.system("python process_data.py -t -i "+ data_loc + " -o " + processed_data_loc) # process training data
@@ -18,7 +18,7 @@ def main(arg):
     preds = pickle.load(open(processed_data_loc + 'XGB_0_Final', 'rb'))
     testdata = pickle.load(open(processed_data_loc + 'ICHI_test_data.p', 'rb'))
     os.makedirs(os.path.dirname(processed_data_loc+'output_results/'),exist_ok=True)   
-    print("outputing predictions to CSV files in: " + processed_data_loc+'output/') 
+    print("outputing predictions to CSV files in: " + processed_data_loc+'output_results/') 
     du.output_to_csv(preds['pred_y_test'], testdata['X'], testdata['X_mask'], testdata['X_time'], preds['othr_data']['ID'],processed_data_loc+'output_results/')
 
 if __name__ == "__main__":

@@ -11,15 +11,16 @@ eXITs requires Python 3.6
 Please follow the steps listed below to process the ICHI DACMI data, train and evaluate models, and generate predictions.
 
 ## Automated training and prediction generation
-This will process the data files for training the base models, ensemble model, and predictions.
-Run `python run.py -i <input_path> -o <output_path>`
-```
-- input_path: "path must contain "train_with_missing", "train_groundtruth", and "test_missing" folders each containing the corresponding data CSVs.
-- output_path " user specified location that will contain the processed data files, and a folder with predictions named "output_results/"
-```
-E.g. `python run.py -i bam/challenge/ -o bam/data/`
 
-## Manual Training, Evaluation, and Predictions
+The `run.py` script will process the data files for training the base models, ensemble model, and predictions. Processed data is saved to `bam/data`, models is saved to `bam/models/`
+Run `python run.py -i <input_path> ` where
+```
+- input_path: path must contain "train_with_missing", "train_groundtruth", and "test_missing" folders each containing the corresponding data CSVs.
+```
+E.g. `python run.py -i bam/challenge/`
+The proccessed data will be stored in `bam/data/`. Imputations will be stored in `bam/data/output_results/'
+
+## Manual Training, Evaluation
 
 **Please note:**
 1. Before running any models, you need to process the dataset and specify the dataset location
@@ -76,6 +77,6 @@ Example: `../models/python ensemble_main.py -em XGB -n 0 -t `
 To evaluate the ensemble and compute the average and per-feature nRMSE, run eval.py on the trained ensemble model name. 
 Example: `../models/python eval.py -em XGB`
 
-### 2.4 Generate prediction
-To generate a prediction using the ensemble, run ensemble_main.py on the model and give the `-f` arg
+### 2.4 Generate predictions
+To generate a predictions using the ensemble, run ensemble_main.py on the model and give the `-f` arg
 Example: `../models/python ensemble_main.py -em XGB -f`
