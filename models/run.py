@@ -4,7 +4,7 @@ import pickle
 def main(arg):
     data_loc = arg.inp
     processed_data_loc = arg.out
-    models = ['BiLSTM', 'BiGRU', 'HorizontalFCN', 'HorizontalKnn', 'HorizontalRandomForest', 'InterpolateLinear']
+    models = ['BiLSTM', 'BiGRU', 'HorizontalFcn', 'HorizontalKnn', 'HorizontalRandomForest', 'InterpolateLinear']
     folds = 5
     os.system("python process_data.py -t -i "+ data_loc + " -o " + processed_data_loc) # process training data
     os.system("python process_data.py -i "+ data_loc + " -o " + processed_data_loc) # process testing data
