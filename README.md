@@ -18,7 +18,7 @@ Run `python run.py -i <input_path> ` where
 - input_path: path must contain "train_with_missing", "train_groundtruth", and "test_missing" folders each containing the corresponding data CSVs.
 ```
 E.g. `python run.py -i bam/challenge/`
-The proccessed data will be stored in `bam/data/`. Imputations will be stored in `bam/data/output_results/'
+The proccessed data will be stored in `bam/data/`. Imputations will be stored in `bam/data/output_results/`
 
 ## Manual Training, Evaluation
 
