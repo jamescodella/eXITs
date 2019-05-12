@@ -1,4 +1,4 @@
-# eXtreme Imputation: An ensemble approach for imputing missing data
+# eXITs: An Ensemble Approach for Imputing Missing EHR Data
 
 This repo contains the code for our IBM Research team's entry in the IEEE International Conference on Health Informatics Data Analytics Challenge on Missing data Imputation (DACMI). The code is copyright 2019 IBM, Corp and open sourced under the Apache License Version 2.0 (APLv2). [See license.txt]
 
